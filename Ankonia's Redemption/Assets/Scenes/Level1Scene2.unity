@@ -7722,6 +7722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed1db1cff38f586449d9c4450a59bfc7, type: 3}
+--- !u!4 &1983805750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1596323798697494254, guid: c07bca70839cf86468855074f44a9a10, type: 3}
+  m_PrefabInstance: {fileID: 2034401739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2034401739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7752,6 +7757,14 @@ PrefabInstance:
     - target: {fileID: 1596323798697494254, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596323798697494254, guid: c07bca70839cf86468855074f44a9a10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0702
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596323798697494254, guid: c07bca70839cf86468855074f44a9a10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0765
       objectReference: {fileID: 0}
     - target: {fileID: 2267765353068333258, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_RootOrder
@@ -7820,7 +7833,7 @@ PrefabInstance:
     - target: {fileID: 2267765353068333259, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: groundCheck
       value: 
-      objectReference: {fileID: 999519412}
+      objectReference: {fileID: 1983805750}
     - target: {fileID: 2267765353068333262, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_Name
       value: Valerie
