@@ -3208,6 +3208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbd3212e80fd144091fd85203913223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTime: 10
   countDown: {fileID: 1131610799}
   paused: 0
 --- !u!114 &2118645596

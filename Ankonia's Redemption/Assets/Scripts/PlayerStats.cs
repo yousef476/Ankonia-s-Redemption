@@ -76,8 +76,10 @@ public class PlayerStats : MonoBehaviour
    public void CollectHearts()
     {
         this.heartsCollected += 1;
-        if(heartsCollected != 10)
-            health = health+5;
+        if (health < 10)
+            health = health + 5;
+        else if (health >= 10)
+            health = 10;
         Debug.Log("Player Hearts: " + this.heartsCollected.ToString());
         Debug.Log("Player Health: " + this.health.ToString());
 

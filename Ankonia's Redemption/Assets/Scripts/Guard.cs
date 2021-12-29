@@ -35,7 +35,7 @@ public class Guard : MonoBehaviour
         }
         else if(collision.tag == "Player")
         {
-           Attack();
+           //Attack();
         }
         else if(collision.tag == "Enemy")
         {
@@ -47,16 +47,16 @@ public class Guard : MonoBehaviour
     private void Update()
     {
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        anim.SetBool("Near", false);
+        //anim.SetBool("Near", false);
 
         Debug.Log("Distance : " + distance.ToString());
         if (Vector2.Distance(transform.position, playerPos.position) < distance)
         {
             Debug.Log("If: " + Vector2.Distance(transform.position, playerPos.position).ToString());
-           // anim.SetBool("Near", true);
+            Attack();
 
 
-            
+
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, guardSpeed * Time.fixedDeltaTime);
             CheckWhereToFace();
             
