@@ -870,11 +870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c305497a966e44e96769eff7c2350d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guardSpeed: 3
+  guardSpeed: 0.5
   guardHealth: 10
   guardDamage: 3
   player: {fileID: 2034401740}
-  distance: 1
+  distance: 0.6
 --- !u!1 &227816956
 GameObject:
   m_ObjectHideFlags: 0

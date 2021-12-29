@@ -35,7 +35,7 @@ public class Guard : MonoBehaviour
         }
         else if(collision.tag == "Player")
         {
-           // Attack();
+           Attack();
         }
         else if(collision.tag == "Enemy")
         {
@@ -53,13 +53,13 @@ public class Guard : MonoBehaviour
         if (Vector2.Distance(transform.position, playerPos.position) < distance)
         {
             Debug.Log("If: " + Vector2.Distance(transform.position, playerPos.position).ToString());
-            anim.SetBool("Near", true);
+           // anim.SetBool("Near", true);
 
 
-            //Flip();
+            
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, guardSpeed * Time.fixedDeltaTime);
             CheckWhereToFace();
-            //Attack();
+            
         }
 
         
@@ -67,6 +67,7 @@ public class Guard : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(dirX * guardSpeed, rb.velocity.y);
+        CheckWhereToFace();
     }
 
 
@@ -90,28 +91,28 @@ public class Guard : MonoBehaviour
     }
 
 
-    //void Attack()
-    //{
-    //    anim.SetBool("Near", true);
-    //    if (guardHealth > 0 && FindObjectOfType<PlayerStats>().health > 0 )
-    //    {
-    //        FindObjectOfType<PlayerStats>().TakeDamage(guardDamage);
-    //    }
-    //    else if (guardHealth <= 0 && FindObjectOfType<PlayerStats>().health > 0)
-    //    {
-    //        GuardDie();
-    //    }
-    //    else if(guardHealth > 0 && FindObjectOfType<PlayerStats>().health <= 0)
-    //    {
-    //        FindObjectOfType<PlayerStats>().Die();
+    void Attack()
+    {
+        anim.SetBool("Near", true);
+        if (guardHealth > 0 && FindObjectOfType<PlayerStats>().health > 0)
+        {
+            FindObjectOfType<PlayerStats>().TakeDamage(guardDamage);
+        }
+        else if (guardHealth <= 0 && FindObjectOfType<PlayerStats>().health > 0)
+        {
+            GuardDie();
+        }
+        else if (guardHealth > 0 && FindObjectOfType<PlayerStats>().health <= 0)
+        {
+            FindObjectOfType<PlayerStats>().Die();
 
-    //    }
+        }
 
-    //}
-        //void GuardDie()
-        //{
-        //    Debug.Log("Guard died");
-        //    anim.SetBool("isDead", true);
-           
-        //}
     }
+    void GuardDie()
+    {
+        Debug.Log("Guard died");
+        anim.SetBool("isDead", true);
+
+    }
+}
