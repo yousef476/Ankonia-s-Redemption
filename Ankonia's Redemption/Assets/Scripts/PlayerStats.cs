@@ -9,19 +9,23 @@ public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
     public int health;
+    public int currentHealth;
     public int lives;
+    public int currentLives;
     private SpriteRenderer spriteRenderer;
     private int heartsCollected = 0;
     private int shieldsCollected = 0;
     private Animator anim;
     public AudioClip hurt;
+    public HealthBar healthBar;
 
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-      
-
+        currentHealth = health;
+        healthBar.SetMaxHealth(health);
+        currentLives = lives;
     }
 
     // Update is called once per frame
@@ -38,14 +42,17 @@ public class PlayerStats : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(hurt, transform.position);
         anim.SetBool("Hurt", true);
-        this.health = this.health - damage;
-            if (this.health < 0)
-                this.health = 0;
-        if (this.lives > 0 && this.health == 0)
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+            if (currentHealth < 0)
+                currentHealth = 0;
+        if (this.lives > 0 && currentHealth == 0)
             {
-                //FindObjectOfType<LevelManager>().RespawnPlayer();
-                this.health = 10;
+                FindObjectOfType<levelManager>().RespawnPlayer();
+                currentHealth = 10;
                 this.lives--;
+                healthBar.SetHealth(currentHealth);
+                healthBar.SetLives(currentLives);
               }
             else if(this.lives <= 0)
             {
@@ -53,7 +60,7 @@ public class PlayerStats : MonoBehaviour
 
             }
    
-            Debug.Log("Player Health: " + this.health.ToString());
+            Debug.Log("Player Health: " + currentHealth.ToString());
             Debug.Log("Player Lives: " + this.lives.ToString());
 
 
@@ -63,7 +70,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    void Die()
+   public void Die()
     {
         Debug.Log("GAME OVER");
         anim.SetBool("isDead", true);
@@ -76,17 +83,21 @@ public class PlayerStats : MonoBehaviour
    public void CollectHearts()
     {
         this.heartsCollected += 1;
-        if(heartsCollected != 10)
-            health = health+5;
+        if(heartsCollected != 10){
+            currentHealth = currentHealth+5;
+            healthBar.SetMaxHealth(currentHealth);    
+        }
         Debug.Log("Player Hearts: " + this.heartsCollected.ToString());
-        Debug.Log("Player Health: " + this.health.ToString());
+        Debug.Log("Player Health: " + currentHealth.ToString());
 
 
     }
     public void CollectShields()
     {
+
         if (shieldsCollected != 10)
         {
+            
             this.shieldsCollected += 1;
         }
 

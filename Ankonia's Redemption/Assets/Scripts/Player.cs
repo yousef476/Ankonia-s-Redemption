@@ -49,52 +49,55 @@ public class Player: MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        anim.SetBool("grounded", grounded);
-        if(Input.GetKeyDown(spacebar) && grounded)
+        if (!PauseAndResume.paused)
         {
-            jump();
-        }
-        
-        if (Input.GetKey(L))
-        {
-           
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-            if (isFacingRight)
+            anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+            anim.SetBool("grounded", grounded);
+            if (Input.GetKeyDown(spacebar) && grounded)
             {
-                flip();
-                isFacingRight = false;
+                jump();
             }
-            
-           
-        }
-        if (Input.GetKey(R))
-        {
-            
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-            if (!isFacingRight)
-            {
-                flip();
-                isFacingRight = true;
-            }
-            
-        }
-        if (Input.GetKey(slide))
-        {
-            anim.SetBool("Slide", true);
-        }
-        if (Input.GetKey(climb))
-        {
-            anim.SetBool("Climb", true);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveSpeed );
-            GetComponent<Rigidbody2D>().gravityScale = 0; 
-        }
-        else
-        {
-            anim.SetBool("Climb", false);
-            GetComponent<Rigidbody2D>().gravityScale = 1;
-        }
 
+            if (Input.GetKey(L))
+            {
+
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                if (isFacingRight)
+                {
+                    flip();
+                    isFacingRight = false;
+                }
+
+
+            }
+            if (Input.GetKey(R))
+            {
+
+                GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                if (!isFacingRight)
+                {
+                    flip();
+                    isFacingRight = true;
+                }
+
+            }
+            if (Input.GetKey(slide))
+            {
+                anim.SetBool("Slide", true);
+            }
+            if (Input.GetKey(climb))
+            {
+                anim.SetBool("Climb", true);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveSpeed);
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
+            else
+            {
+                anim.SetBool("Climb", false);
+                GetComponent<Rigidbody2D>().gravityScale = 1;
+            }
+
+        }
     }
    
 
