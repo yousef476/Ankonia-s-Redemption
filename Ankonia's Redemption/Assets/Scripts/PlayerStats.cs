@@ -63,7 +63,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    void Die()
+   public void Die()
     {
         Debug.Log("GAME OVER");
         anim.SetBool("isDead", true);
