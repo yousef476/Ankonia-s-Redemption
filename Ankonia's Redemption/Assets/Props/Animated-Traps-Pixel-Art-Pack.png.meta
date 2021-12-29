@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: b2b24c2927ca756409c2a432c24a4b0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3193790425292263093
+    second: Animated-Traps-Pixel-Art-Pack_0
+  - first:
+      213: -1703822234533988373
+    second: Animated-Traps-Pixel-Art-Pack_1
+  - first:
+      213: 6338748536356999138
+    second: Animated-Traps-Pixel-Art-Pack_2
+  - first:
+      213: 2611551976092163132
+    second: Animated-Traps-Pixel-Art-Pack_3
+  - first:
+      213: 2855056868738638144
+    second: Animated-Traps-Pixel-Art-Pack_4
+  - first:
+      213: -6374245013128573463
+    second: Animated-Traps-Pixel-Art-Pack_5
+  - first:
+      213: -40491669292824483
+    second: Animated-Traps-Pixel-Art-Pack_6
+  - first:
+      213: 9108644899873842727
+    second: Animated-Traps-Pixel-Art-Pack_7
+  - first:
+      213: -3857963162765286271
+    second: Animated-Traps-Pixel-Art-Pack_8
+  - first:
+      213: -239768748323768662
+    second: Animated-Traps-Pixel-Art-Pack_9
+  - first:
+      213: -1907423158465694504
+    second: Animated-Traps-Pixel-Art-Pack_10
+  - first:
+      213: -9008045470598889481
+    second: Animated-Traps-Pixel-Art-Pack_11
+  - first:
+      213: -2064402266464605767
+    second: Animated-Traps-Pixel-Art-Pack_12
+  - first:
+      213: 3772099975726729399
+    second: Animated-Traps-Pixel-Art-Pack_13
+  - first:
+      213: 7185776730000327561
+    second: Animated-Traps-Pixel-Art-Pack_14
+  - first:
+      213: -4985493657898874032
+    second: Animated-Traps-Pixel-Art-Pack_15
+  - first:
+      213: -4199535912905132974
+    second: Animated-Traps-Pixel-Art-Pack_16
+  - first:
+      213: -117365858488400323
+    second: Animated-Traps-Pixel-Art-Pack_17
+  - first:
+      213: 8411973029874416435
+    second: Animated-Traps-Pixel-Art-Pack_18
+  - first:
+      213: -3470323773358875257
+    second: Animated-Traps-Pixel-Art-Pack_19
+  - first:
+      213: -7029563444564109525
+    second: Animated-Traps-Pixel-Art-Pack_20
+  - first:
+      213: 3906554789993202969
+    second: Animated-Traps-Pixel-Art-Pack_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 541
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41396597806da3d0800000000000000
+      internalID: -3193790425292263093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_1
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 401
+        width: 130
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7703674beca58e0800000000000000
+      internalID: -1703822234533988373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_2
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 541
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef061ea532c7f750800000000000000
+      internalID: 6338748536356999138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 529
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c51778fa81e3420800000000000000
+      internalID: 2611551976092163132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 524
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041a4ba68133f9720800000000000000
+      internalID: 2855056868738638144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_5
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 529
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed8a29cee12a87a0800000000000000
+      internalID: -6374245013128573463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_6
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 525
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5840739a05207ff0800000000000000
+      internalID: -40491669292824483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_7
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 401
+        width: 131
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726672ad648686e70800000000000000
+      internalID: 9108644899873842727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 401
+        width: 130
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18425de91f2c57ac0800000000000000
+      internalID: -3857963162765286271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 401
+        width: 131
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6fbeff79b2cacf0800000000000000
+      internalID: -239768748323768662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_10
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 371
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d47c4b4eb87785e0800000000000000
+      internalID: -1907423158465694504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_11
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 356
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fff2640f5efcf280800000000000000
+      internalID: -9008045470598889481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_12
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 345
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9add98315c953e0800000000000000
+      internalID: -2064402266464605767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_13
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 245
+        width: 60
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8837641f0395430800000000000000
+      internalID: 3772099975726729399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 323
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98300f23dd109b360800000000000000
+      internalID: 7185776730000327561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 250
+        width: 76
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b89f2bee7ffcab0800000000000000
+      internalID: -4985493657898874032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 231
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2543bc9565048b5c0800000000000000
+      internalID: -4199535912905132974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_17
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 240
+        width: 68
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d364a00af580f5ef0800000000000000
+      internalID: -117365858488400323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_18
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 145
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bb4d1f6e45db470800000000000000
+      internalID: 8411973029874416435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_19
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 17
+        width: 172
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78dd9592aeee6dfc0800000000000000
+      internalID: -3470323773358875257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_20
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 17
+        width: 177
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b275fa89a49f17e90800000000000000
+      internalID: -7029563444564109525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated-Traps-Pixel-Art-Pack_21
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 17
+        width: 194
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915452932eed63630800000000000000
+      internalID: 3906554789993202969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
