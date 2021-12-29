@@ -5,114 +5,64 @@ using UnityEngine;
 public class Guard : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float dirX;
-    public float guardSpeed;
-    private Rigidbody2D rb;
-    private bool isFacingRight = false;
-    private Vector3 localScale;
-    public int guardHealth;
-    public int guardDamage;
     public GameObject player;
     private Transform playerPos;
     private Vector2 currentPos;
-    public float distance;
+    //public float distance;
+    public float enemySpeed;
+    public bool isFacingRight;
+    public int damage;
     private Animator anim;
     void Start()
     {
-        localScale = transform.localScale;
-        rb = GetComponent<Rigidbody2D>();
-        dirX = -1f;
-        playerPos = player.GetComponent<Transform>();
-        currentPos = GetComponent<Transform>().position;
-        anim = GetComponent<Animator>();
+        //playerPos = player.GetComponent<Transform>();
+        //currentPos = GetComponent<Transform>().position;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.tag == "GROUND" )
-        {
-            anim.SetBool("Stuck", true);
+       // if (Vector2.Distance(transform.position, playerPos.position) < distance)
+       // {
 
-        }
-        else if(collision.tag == "Player")
-        {
-           //Attack();
-        }
-        else if(collision.tag == "Enemy")
-        {
-            dirX *= -1f;
-
-        }
-
-    }
-    private void Update()
-    {
-        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        //anim.SetBool("Near", false);
-
-        Debug.Log("Distance : " + distance.ToString());
-        if (Vector2.Distance(transform.position, playerPos.position) < distance)
-        {
-            Debug.Log("If: " + Vector2.Distance(transform.position, playerPos.position).ToString());
-            Attack();
-
-
-
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.position, guardSpeed * Time.fixedDeltaTime);
-            CheckWhereToFace();
-            
-        }
-
-        
+            //Flip();
+         //   transform.position = Vector2.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
+       // }
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX * guardSpeed, rb.velocity.y);
-        CheckWhereToFace();
-    }
-
-
-    private void LateUpdate()
-    {
-        CheckWhereToFace();
-    }
-    void CheckWhereToFace()
-    {
-        if (dirX > 0)
-            isFacingRight = true;
-        else if (dirX < 0)
-            isFacingRight = false;
-
-        if (((isFacingRight) && (localScale.x < 0)) || ((!isFacingRight) && (localScale.x > 0)))
-            localScale.x *= -1;
-
-
-        transform.localScale = localScale;
-
-    }
-
-
-    void Attack()
-    {
-        anim.SetBool("Near", true);
-        if (guardHealth > 0 && FindObjectOfType<PlayerStats>().health > 0)
+        if (this.isFacingRight == true)
         {
-            FindObjectOfType<PlayerStats>().TakeDamage(guardDamage);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
-        else if (guardHealth <= 0 && FindObjectOfType<PlayerStats>().health > 0)
+        else
         {
-            GuardDie();
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
-        else if (guardHealth > 0 && FindObjectOfType<PlayerStats>().health <= 0)
-        {
-            FindObjectOfType<PlayerStats>().Die();
+        anim.SetBool("Attack", false);
+    }
+    public void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        transform.localScale = new Vector3(-(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Turn" || collision.tag == "Enemy")
+        {
+            Flip();
+        }
+        else if (collision.tag == "Player")
+        {
+            Attack(collision);
         }
 
     }
-    void GuardDie()
+    void Attack(Collider2D collision)
     {
-        Debug.Log("Guard died");
-        anim.SetBool("isDead", true);
+        anim.SetBool("Attack", true);
+        collision.GetComponent<PlayerStats>().TakeDamage(damage);
 
     }
 }
