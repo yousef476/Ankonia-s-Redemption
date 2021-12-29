@@ -39,4 +39,5 @@ public class PauseAndResume : MonoBehaviour
         paused = false;
         Time.timeScale = 1;
     }
+   
 }
