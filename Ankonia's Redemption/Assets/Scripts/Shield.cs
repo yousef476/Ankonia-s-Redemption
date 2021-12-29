@@ -23,14 +23,14 @@ public class Shield : MonoBehaviour
     {
         if (collision.tag == "Player")
         {   
-            shield.SetActive(true);
-            for(int i = 0; i < currentTime; i++){
-                Valerie.transform.tag = "Shield";
-            }
-            shield.SetActive(false);
-            Destroy(this.gameObject);
-            AudioSource.PlayClipAtPoint(shield, transform.position);
-            FindObjectOfType<PlayerStats>().CollectShields();
+            //shield.SetActive(true);
+            //for(int i = 0; i < currentTime; i++){
+            //    Valerie.transform.tag = "Shield";
+            //}
+          //  shield.SetActive(false);
+            //Destroy(this.gameObject);
+            //AudioSource.PlayClipAtPoint(shield, transform.position);
+            //FindObjectOfType<PlayerStats>().CollectShields();
            
 
 

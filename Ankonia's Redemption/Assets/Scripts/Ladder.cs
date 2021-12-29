@@ -20,6 +20,7 @@ public class Ladder : MonoBehaviour
         if (other.tag == "Player")
         {
             SceneManager.LoadScene("Level1Scene2");
+            
 
         }
 
