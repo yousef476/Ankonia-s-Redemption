@@ -8,26 +8,26 @@ public class Guard : MonoBehaviour
     public GameObject player;
     private Transform playerPos;
     private Vector2 currentPos;
-    public float distance;
+    //public float distance;
     public float enemySpeed;
     public bool isFacingRight;
     public int damage;
+    private Animator anim;
     void Start()
     {
-        playerPos = player.GetComponent<Transform>();
-        currentPos = GetComponent<Transform>().position;
+        //playerPos = player.GetComponent<Transform>();
+        //currentPos = GetComponent<Transform>().position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) < distance)
-        {
+       // if (Vector2.Distance(transform.position, playerPos.position) < distance)
+       // {
 
             //Flip();
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
-            Attack();
-        }
+         //   transform.position = Vector2.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
+       // }
     }
     private void FixedUpdate()
     {
@@ -39,6 +39,7 @@ public class Guard : MonoBehaviour
         {
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
+        anim.SetBool("Attack", false);
     }
     public void Flip()
     {
@@ -54,12 +55,14 @@ public class Guard : MonoBehaviour
         }
         else if (collision.tag == "Player")
         {
-            Attack();
+            Attack(collision);
         }
 
     }
-    void Attack()
+    void Attack(Collider2D collision)
     {
+        anim.SetBool("Attack", true);
+        collision.GetComponent<PlayerStats>().TakeDamage(damage);
 
     }
 }
