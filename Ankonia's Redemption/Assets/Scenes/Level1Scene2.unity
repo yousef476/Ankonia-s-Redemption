@@ -850,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168678398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.785, y: -0.594, z: 0}
+  m_LocalPosition: {x: 5.046, y: -0.594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1718536162}
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 592456853}
   m_Layer: 8
   m_Name: End-point (1)
-  m_TagString: Untagged
+  m_TagString: End-Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7915,7 +7915,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0566988, y: 0.039586514}
+  m_Offset: {x: -0.06427646, y: -0.041874364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7926,7 +7926,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08896732, y: 0.23743933}
+  m_Size: {x: 0.10412264, y: 0.3245835}
   m_EdgeRadius: 0
 --- !u!1 &1811046561
 GameObject:
@@ -8686,7 +8686,7 @@ GameObject:
   - component: {fileID: 2051820359}
   m_Layer: 8
   m_Name: End-point
-  m_TagString: Untagged
+  m_TagString: End-Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8715,7 +8715,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.08830631, y: 0.1962362}

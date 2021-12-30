@@ -8,8 +8,8 @@ TagManager:
   - Valerie
   - Enemy
   - Ladder
-  - Turn
   - Shield
+  - End-Point
   layers:
   - Default
   - TransparentFX
