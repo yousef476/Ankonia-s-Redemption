@@ -9,7 +9,6 @@ public class DialogueLevel2 : MonoBehaviour
     private string[] sentences;
     private int index = 0;
     public float typingSpeed;
-    public GameObject continueButton;
     public GameObject dialogueBox;
     public Rigidbody2D player;
 
@@ -18,8 +17,7 @@ public class DialogueLevel2 : MonoBehaviour
     void Start()
     {
         dialogueBox.SetActive(false);
-        continueButton.SetActive(false);
-       
+
     }
 
     // Update is called once per frame
@@ -36,8 +34,10 @@ public class DialogueLevel2 : MonoBehaviour
 
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
-            continueButton.SetActive(true);
+           
         }
+        yield return new WaitForSeconds(2);
+        NextSentence();
     }
     public void SetSentences(string[] sentences)
     {
@@ -46,8 +46,7 @@ public class DialogueLevel2 : MonoBehaviour
   
     public void NextSentence()
     {
-
-        continueButton.SetActive(false);
+      
         if (index < sentences.Length - 1)
         {
             index++;
@@ -57,7 +56,6 @@ public class DialogueLevel2 : MonoBehaviour
         else
         {
             textDisplay.text = " ";
-            continueButton.SetActive(false);
             dialogueBox.SetActive(false);
             this.sentences = null;
             index = 0;

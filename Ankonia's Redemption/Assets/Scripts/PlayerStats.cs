@@ -9,9 +9,9 @@ public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
     public int health;
-    public int currentHealth;
+    private int currentHealth;
     public int lives;
-    public int currentLives;
+    private int currentLives;
     private SpriteRenderer spriteRenderer;
     private int heartsCollected = 0;
     private int shieldsCollected = 0;
