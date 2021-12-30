@@ -21,15 +21,12 @@ public class PlaugeHealth : MonoBehaviour
     }
 	public void TakeDamage(int damage)
 	{
-       
         //anim.SetBool("Hurt", true);
         if (isInvulnerable)
 
 			return;
-
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-
         if (currentHealth <= 0)
 		{
 			Die();
