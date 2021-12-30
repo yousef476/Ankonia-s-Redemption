@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaugeWeapon : MonoBehaviour
 {
-    public int attackDamage = 3;
+    public int attackDamage = 5;
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;

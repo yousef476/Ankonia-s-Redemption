@@ -134,3 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 8300000, guid: f72d2d1e87e1c6f4f84e4b42d2b1b6e7, type: 3}
+  shieldBar: {fileID: 0}
+  Valerie: {fileID: 2267765353068333262, guid: c07bca70839cf86468855074f44a9a10, type: 3}
+  currentTime: 0
+  startingTime: 5

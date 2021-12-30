@@ -63,10 +63,6 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Player Health: " + currentHealth.ToString());
             Debug.Log("Player Lives: " + this.lives.ToString());
 
-
-
-
-
     }
 
 
@@ -100,7 +96,6 @@ public class PlayerStats : MonoBehaviour
             
             this.shieldsCollected += 1;
         }
-
 
     }
 }

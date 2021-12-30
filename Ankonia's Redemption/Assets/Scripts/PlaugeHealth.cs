@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlaugeHealth : MonoBehaviour
 {
-    public int health = 500;
+    public int health = 50;
+    public HealthBar healthBar;
+    public int currentHealth;
 
-	public GameObject deathEffect;
+    public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
 
@@ -15,17 +17,20 @@ public class PlaugeHealth : MonoBehaviour
 	void Start()
     {
         anim = GetComponent<Animator>();
+        currentHealth = health;
     }
 	public void TakeDamage(int damage)
 	{
-		//anim.SetBool("Hurt", true);
-		if (isInvulnerable)
+       
+        //anim.SetBool("Hurt", true);
+        if (isInvulnerable)
 
 			return;
 
-		health -= damage;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
-		if (health <= 0)
+        if (currentHealth <= 0)
 		{
 			Die();
 		}

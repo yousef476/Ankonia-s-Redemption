@@ -8,7 +8,7 @@ public class PlayerComabt : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float attackRange = 0.5f;
-    public int attackDamage = 40;
+    public int attackDamage = 5;
     public float attackRate = 2f;
     float nextAttackTime = 2f;
     public KeyCode Attack;

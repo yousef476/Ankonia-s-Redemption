@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -9025062401285849595}
   m_Layer: 0
   m_Name: Valerie
-  m_TagString: Player
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,8 +215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  currentHealth: 0
   lives: 3
+  currentLives: 0
   hurt: {fileID: 8300000, guid: 85f56b9d05b37024a9db0c2016f1deb7, type: 3}
+  healthBar: {fileID: 0}
 --- !u!1 &2372828950089109906
 GameObject:
   m_ObjectHideFlags: 0
