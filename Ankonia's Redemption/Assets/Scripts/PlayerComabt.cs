@@ -33,7 +33,9 @@ public class PlayerComabt : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies){
             enemy.GetComponent<PlaugeHealth>().TakeDamage(attackDamage);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
+       
     }
 
     void OnDrawGizmosSelected() {
