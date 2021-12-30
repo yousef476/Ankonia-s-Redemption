@@ -29,11 +29,12 @@ public class PlayerComabt : MonoBehaviour
 
     void attack(){
         animator.SetTrigger("Attack");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D hitEnemies = Physics2D.OverlapCircle(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitEnemies){
-            enemy.GetComponent<PlaugeHealth>().TakeDamage(attackDamage);
-        }
+		if (hitEnemies != null)
+		{
+			 hitEnemies.GetComponent<PlaugeHealth>().TakeDamage(attackDamage);
+		}
     }
 
     void OnDrawGizmosSelected() {

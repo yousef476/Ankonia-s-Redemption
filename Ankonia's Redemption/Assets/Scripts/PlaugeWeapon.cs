@@ -15,19 +15,19 @@ public class PlaugeWeapon : MonoBehaviour
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;
 
-		//Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		//if (colInfo != null)
-		//{
-			//colInfo.GetComponent<PlayerStats>().TakeDamage(attackDamage);
-		//}
+		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+		if (colInfo != null)
+		{
+			colInfo.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+		}
 	}
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerStats>().TakeDamage(attackDamage);
         }
-    }
+    }*/
 
     void OnDrawGizmosSelected()
 	{

@@ -46,15 +46,15 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetHealth(currentHealth);
             if (currentHealth < 0)
                 currentHealth = 0;
-        if (this.lives > 0 && currentHealth == 0)
+        if (currentLives > 0 && currentHealth == 0)
             {
                 FindObjectOfType<levelManager>().RespawnPlayer();
                 currentHealth = 10;
-                this.lives--;
+                currentLives--;
                 healthBar.SetHealth(currentHealth);
                 healthBar.SetLives(currentLives);
               }
-            else if(this.lives <= 0)
+            else if(currentLives <= 0)
             {
                 Die();
 
