@@ -8,10 +8,13 @@ public class PauseAndResume : MonoBehaviour
     public GameObject pauseScreen;
     public static bool paused;
     public KeyCode pauseButton;
+    public Canvas healthbar;
     void Start()
     {
         paused = false;
         pauseScreen.SetActive(false);
+        healthbar.enabled = true;
+
     }
 
     // Update is called once per frame
@@ -32,12 +35,14 @@ public class PauseAndResume : MonoBehaviour
         pauseScreen.SetActive(true);
         paused = true;
         Time.timeScale = 0;
+        healthbar.enabled = false;
     }
     public void Resume()
     {
         pauseScreen.SetActive(false);
         paused = false;
         Time.timeScale = 1;
+        healthbar.enabled = true;
     }
    
 }

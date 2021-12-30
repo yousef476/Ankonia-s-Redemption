@@ -4,65 +4,45 @@ using UnityEngine;
 
 public class Guard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject player;
-    private Transform playerPos;
-    private Vector2 currentPos;
-    //public float distance;
-    public float enemySpeed;
-    public bool isFacingRight;
-    public int damage;
+    public bool isFacingRight = false;
+    public float maxSpeed = 3f;
+    public int damage = 6;
+
     private Animator anim;
     void Start()
     {
-        //playerPos = player.GetComponent<Transform>();
-        //currentPos = GetComponent<Transform>().position;
+        anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-       // if (Vector2.Distance(transform.position, playerPos.position) < distance)
-       // {
-
-            //Flip();
-         //   transform.position = Vector2.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
-       // }
-    }
-    private void FixedUpdate()
-    {
-        if (this.isFacingRight == true)
+        anim.SetBool("Walk", true);
+        if(this.isFacingRight == true)
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
         else
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
-        anim.SetBool("Attack", false);
     }
-    public void Flip()
+    void OnTrigger2D(Collider2D other)
     {
+        if (other.tag == "Player")
+        {
+            anim.SetBool("Attack",true);
+            FindObjectOfType<PlayerStats>().TakeDamage(damage);
+        }
+        if (other.tag == "End-Point")
+        {
+            flip();
+        }
+    }
+
+    public void flip(){
         isFacingRight = !isFacingRight;
         transform.localScale = new Vector3(-(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Turn" || collision.tag == "Enemy")
-        {
-            Flip();
-        }
-        else if (collision.tag == "Player")
-        {
-            Attack(collision);
-        }
 
-    }
-    void Attack(Collider2D collision)
-    {
-        anim.SetBool("Attack", true);
-        collision.GetComponent<PlayerStats>().TakeDamage(damage);
 
-    }
+
 }
