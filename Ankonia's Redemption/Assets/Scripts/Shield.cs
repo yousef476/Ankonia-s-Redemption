@@ -39,15 +39,12 @@ public class Shield : MonoBehaviour
     }
     public IEnumerator ShieldAppear()
     {
-        for (int i = 1; i > 0; i++)
-        {
+        while (true){
             Valerie.transform.tag = "Shield";
             shieldBar.SetActive(true);
             yield return new WaitForSeconds(5);
-        }
-        shieldBar.SetActive(false);
-        
-
+            shieldBar.SetActive(false);
+    }
     }
 
 }
