@@ -20,35 +20,36 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if (!PauseAndResume.paused)
-       // {
-            currentTime -= 1 * Time.deltaTime;
-            countDown.text = currentTime.ToString("0");
+        // if (!PauseAndResume.paused)
+        // {
+        currentTime -= 1 * Time.deltaTime;
+        countDown.text = currentTime.ToString("0");
 
 
-            if (currentTime >= 3.5f)
-            {
-                countDown.color = Color.green;
-            }
-            else if (currentTime < 3.5f)
-            {
-                countDown.color = Color.red;
-            }
-            if (currentTime <= 0)
-            {
-                currentTime = 0;
-            }
-            if (paused == true)
-            {
-                Time.timeScale = 0;
+        if (currentTime >= 3.5f)
+        {
+            countDown.color = Color.green;
+        }
+        else if (currentTime < 3.5f)
+        {
+            countDown.color = Color.red;
+        }
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+        }
+        if (paused == true)
+        {
+            Time.timeScale = 0;
 
-            }
+        }
 
-            if (currentTime <= 0 && paused == false)
-            {
-                Lose();
-            }
-       // }
+        if (currentTime <= 0 && paused == false)
+        {
+            Lose();
+        }
+
+        // }
 
 
     }
@@ -57,5 +58,9 @@ public class Timer : MonoBehaviour
         FindObjectOfType<PlayerStats>().Die();
 
 
+    }
+    public void StartTimer()
+    {
+        
     }
 }
