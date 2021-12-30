@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guard : MonoBehaviour
+public class Guard : Enemy
 {
     public bool isFacingRight = false;
     public float maxSpeed = 3f;
     public int damage = 6;
-
     private Animator anim;
     void Start()
     {
@@ -25,15 +24,20 @@ public class Guard : MonoBehaviour
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(-maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
     }
-    void OnTrigger2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            anim.SetBool("Attack",true);
+            anim.SetBool("Attack", true);
             FindObjectOfType<PlayerStats>().TakeDamage(damage);
+        }
+        else
+        {
+            anim.SetBool("Attack", false);
         }
         if (other.tag == "End-Point")
         {
+            Debug.Log("End");
             flip();
         }
     }
