@@ -27,8 +27,10 @@ public class Shield : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+           
             StartCoroutine(ShieldAppear());
             Destroy(this.gameObject);
+            //Valerie.transform.tag = "Player";
             AudioSource.PlayClipAtPoint(shield, transform.position);
             FindObjectOfType<PlayerStats>().CollectShields();
           
@@ -39,12 +41,12 @@ public class Shield : MonoBehaviour
     {
         for (int i = 1; i > 0; i++)
         {
-            shieldBar.SetActive(true);
             Valerie.transform.tag = "Shield";
+            shieldBar.SetActive(true);
             yield return new WaitForSeconds(5);
         }
         shieldBar.SetActive(false);
-        Valerie.transform.tag = "Player";
+        
 
     }
 

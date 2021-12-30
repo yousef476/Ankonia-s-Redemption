@@ -7,7 +7,6 @@ public class Guard : Enemy
     public bool isFacingRight = false;
     public float maxSpeed = 3f;
     public int damage = 6;
-
     private Animator anim;
     void Start()
     {
