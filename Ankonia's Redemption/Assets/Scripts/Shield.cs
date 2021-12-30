@@ -6,35 +6,46 @@ using UnityEngine.UI;
 public class Shield : MonoBehaviour
 {
     public AudioClip shield;
-    public ShieldBar shieldBar;
+    public GameObject shieldBar;
     public GameObject Valerie;
+     float currentTime;
+    float startingTime = 5f;
     // Start is called before the first frame update
     void Start()
     {
+        currentTime = startingTime;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentTime -= 1 * Time.deltaTime;
     }
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        {   
-            //shield.SetActive(true);
-            //for(int i = 0; i < currentTime; i++){
-            //    Valerie.transform.tag = "Shield";
-            //}
-          //  shield.SetActive(false);
-            //Destroy(this.gameObject);
-            //AudioSource.PlayClipAtPoint(shield, transform.position);
-            //FindObjectOfType<PlayerStats>().CollectShields();
-           
-
-
-
+        {
+            StartCoroutine(ShieldAppear());
+            Destroy(this.gameObject);
+            AudioSource.PlayClipAtPoint(shield, transform.position);
+            FindObjectOfType<PlayerStats>().CollectShields();
+          
         }
+            
     }
+    public IEnumerator ShieldAppear()
+    {
+        for (int i = 1; i > 0; i++)
+        {
+            shieldBar.SetActive(true);
+            Valerie.transform.tag = "Shield";
+            yield return new WaitForSeconds(5);
+        }
+        shieldBar.SetActive(false);
+        Valerie.transform.tag = "Player";
+
+    }
+
 }
