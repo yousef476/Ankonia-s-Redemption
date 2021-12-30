@@ -271,11 +271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267765353068333258, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -53.53
+      value: -42.42
       objectReference: {fileID: 0}
     - target: {fileID: 2267765353068333258, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.82
+      value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: 2267765353068333258, guid: c07bca70839cf86468855074f44a9a10, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3758,6 +3758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   healthBar: {fileID: 2017301855}
+  victory: {fileID: 8300000, guid: 0d8cdb0e866cc2d46a83f9bfed0b6a62, type: 3}
+  anim: {fileID: 0}
 --- !u!61 &2049603956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3883,6 +3885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 162589558}
   isFlipped: 0
+  anim: {fileID: 0}
 --- !u!114 &2049603961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3932,7 +3935,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.015304396, y: -0.14182165}

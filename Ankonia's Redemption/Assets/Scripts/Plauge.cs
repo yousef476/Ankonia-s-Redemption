@@ -6,8 +6,8 @@ public class Plauge : MonoBehaviour
 {
     public Transform player;
     public bool isFlipped = false;
-
-	public void LookAtPlayer()
+    public Animator anim;
+    public void LookAtPlayer()
 	{
 		Vector3 flipped = transform.localScale;
 		flipped.z *= -1f;
@@ -24,5 +24,6 @@ public class Plauge : MonoBehaviour
 			transform.Rotate(0f, 180f, 0f);
 			isFlipped = true;
 		}
+     
 	}
 }

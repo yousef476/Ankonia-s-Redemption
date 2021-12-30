@@ -4397,7 +4397,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1963023909}
-  lives: {fileID: 0}
+  live1: {fileID: 0}
+  live2: {fileID: 0}
+  live3: {fileID: 0}
 --- !u!114 &1963023909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4772,7 +4774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbd3212e80fd144091fd85203913223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 20
+  startTime: 27
   countDown: {fileID: 1131610799}
   paused: 0
 --- !u!114 &2118645596

@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlaugeHealth : MonoBehaviour
 {
     public int health = 50;
     public HealthBar healthBar;
     private int currentHealth;
+    public AudioClip victory;
 
-	 private Animator anim;
+    public Animator anim;
 
 	void Start()
     {
@@ -36,5 +38,8 @@ public class PlaugeHealth : MonoBehaviour
         Debug.Log("Dead");
 		anim.SetBool("Dead", true);
 		Destroy(gameObject);
-	}
+        AudioSource.PlayClipAtPoint(victory, transform.position);
+        SceneManager.LoadScene("Level3");
+
+    }
 }
