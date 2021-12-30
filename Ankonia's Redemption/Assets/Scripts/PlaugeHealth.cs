@@ -10,7 +10,7 @@ public class PlaugeHealth : MonoBehaviour
 
     public GameObject deathEffect;
 
-	public bool isInvulnerable = false;
+	//public bool isInvulnerable = false;
 
 	 private Animator anim;
 
@@ -21,10 +21,9 @@ public class PlaugeHealth : MonoBehaviour
     }
 	public void TakeDamage(int damage)
 	{
-        //anim.SetBool("Hurt", true);
-        if (isInvulnerable)
-
-			return;
+        anim.SetBool("Hurt", true);
+        //if (isInvulnerable)
+			//return;
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
@@ -36,7 +35,7 @@ public class PlaugeHealth : MonoBehaviour
 	void Die()
 	{
         Debug.Log("Dead");
-		//anim.SetBool("isDead", true);
+		anim.SetBool("Dead", true);
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}

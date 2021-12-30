@@ -4,65 +4,124 @@ using UnityEngine;
 
 public class Guard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject player;
-    private Transform playerPos;
-    private Vector2 currentPos;
-    //public float distance;
-    public float enemySpeed;
-    public bool isFacingRight;
-    public int damage;
+    public Transform raycast;
+    public LayerMask raycastMask;
+    public float raycastLength;
+    public float attackDistance;
+    public float moveSpeed;
+    public float timer;
+    
+    private RaycastHit2D hit;
+    private GameObject target;
     private Animator anim;
-    void Start()
-    {
-        //playerPos = player.GetComponent<Transform>();
-        //currentPos = GetComponent<Transform>().position;
-    }
+    private float distance;
+    private bool attackMode;
+    private bool inRange;
+    private bool cooling;
+    private float inTimer;
+    
 
-    // Update is called once per frame
+    void Awake() {
+        inTimer = timer;
+        anim = GetComponent<Animator>();
+    }
+    
     void Update()
     {
-       // if (Vector2.Distance(transform.position, playerPos.position) < distance)
-       // {
+       if (inRange){
+           hit = Physics2D.Raycast(raycast.position, Vector2.left, raycastLength, raycastMask);
+           RaycastDebugger();
+       }
 
-            //Flip();
-         //   transform.position = Vector2.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
-       // }
+       if (hit.collider != null)
+       {
+           EnemyLogic();
+       }
+       else if (hit.collider == null)
+       {
+           inRange = false;
+       }
+
+       if (inRange == false)
+       {
+           anim.SetBool("Walk", false);
+           StopAttack();
+       }
     }
-    private void FixedUpdate()
-    {
-        if (this.isFacingRight == true)
-        {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+
+    void OnTriggerEnter2D(Collider trig) {
+        if(trig.gameObject.tag == "Player"){
+            target = trig.gameObject;
+            inRange = true;
         }
-        else
+    }
+
+    void EnemyLogic(){
+        distance = Vector2.Distance(transform.position, target.transform.position);
+
+        if (distance > attackDistance)
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-enemySpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            Move();
+            StopAttack();
         }
+        else if (attackDistance >= distance && cooling == false)
+        {
+            Attack();
+        }
+
+        if (cooling)
+        {
+            cooldown();
+            anim.SetBool("Attack", false);
+        }
+    }
+
+    void Move(){
+        anim.SetBool("Walk", true);
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Guard_attack"))
+        {
+            Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
+
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        }
+    }
+
+    void Attack(){
+        timer = inTimer;
+        attackMode = true;
+
+        anim.SetBool("Walk", false);
+        anim.SetBool("Attack", true);
+    }
+
+    void cooldown(){
+        timer -= Time.deltaTime;
+
+        if (timer <= 0 && cooling && attackMode)
+        {
+            cooling = false;
+            timer = inTimer;
+        }
+    }
+
+    void StopAttack(){
+        cooling = false;
+        attackMode = false;
         anim.SetBool("Attack", false);
     }
-    public void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        transform.localScale = new Vector3(-(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Turn" || collision.tag == "Enemy")
+    void RaycastDebugger(){
+        if (distance > attackDistance)
         {
-            Flip();
+            Debug.DrawRay(raycast.position, Vector2.left * raycastLength, Color.red);
         }
-        else if (collision.tag == "Player")
-        {
-            Attack(collision);
+        else if (attackDistance > distance){
+            Debug.DrawRay(raycast.position, Vector2.left * raycastLength, Color.green);
         }
-
     }
-    void Attack(Collider2D collision)
-    {
-        anim.SetBool("Attack", true);
-        collision.GetComponent<PlayerStats>().TakeDamage(damage);
 
+    public void TrriggerCooling(){
+        cooling = true;
     }
-}
+    
+    }
