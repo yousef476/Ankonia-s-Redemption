@@ -20,8 +20,8 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if (!PauseAndResume.paused)
-       // {
+        if (!PauseAndResume.paused)
+       {
             currentTime -= 1 * Time.deltaTime;
             countDown.text = currentTime.ToString("0");
 
@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
             {
                 Lose();
             }
-       // }
+       }
 
 
     }
